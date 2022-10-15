@@ -1,2 +1,1 @@
-# ClothesSustainabilityGCExt
-A google chrome extension to measure the sustainability of certain clothes
+Example code for my article on building a simple Google Chrome extension.
