@@ -5,7 +5,7 @@ databaseMaterials.set('polyester', 7);
 databaseMaterials.set('linen', 5);
 
 
-const dataScrapedMaterials = ["34%", "cotton", "56%", "nylon", "10%", "polyester"];
+const dataScrapedMaterials = ["100%", "cotton"];
 
 var sustainabilityIndex = 0;
 
@@ -24,8 +24,8 @@ function findIndex(dataScrapedMaterials) {
 
 var finalSustainabilityIndex = findIndex(dataScrapedMaterials);
 chrome.runtime.sendMessage({
-    'productName': "Extra High-Waisted Baggy Wide-Leg Non-Stretch Jeans",
+    'productName': "Men's Nike Sportswear Club T-Shirt",
     'susIndex': finalSustainabilityIndex,
-    'infoLink': "https://oldnavy.gap.com/",
+    'infoLink': 'https://about.nike.com/en/impact',
 });
 console.log(finalSustainabilityIndex);
