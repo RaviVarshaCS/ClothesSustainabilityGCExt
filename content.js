@@ -1,6 +1,35 @@
-// Send a message containing the page details back to the event page
+
+
+
+//'use strict';
+
+const databaseMaterials = new Map();
+databaseMaterials.set('cotton', 5);
+databaseMaterials.set('nylon', 6);
+databaseMaterials.set('polyester', 7);
+databaseMaterials.set('linen', 5);
+
+
+const dataScrapedMaterials = ["34", "cotton", "56", "nylon", "10", "polyester"];
+
+var sustainabilityIndex = 0;
+
+function findIndex(dataScrapedMaterials) {
+    for(let i = 1; i < dataScrapedMaterials.length; i+=2) {
+        for(const key of databaseMaterials.keys()) {
+            if(key.toLowerCase()===dataScrapedMaterials[i]) {
+                sustainabilityIndex += databaseMaterials.get(key)*(dataScrapedMaterials[i-1]/100);
+            }
+        }
+
+    }
+    return Math.round(sustainabilityIndex);
+}
+
+var finalSustainabilityIndex = findIndex(dataScrapedMaterials);
 chrome.runtime.sendMessage({
-    'title': document.title,
-    'url': window.location.href,
-    'summary': window.getSelection().toString()
+    'productName': "Extra High-Waisted Baggy Wide-Leg Non-Stretch Jeans",
+    'susIndex': finalSustainabilityIndex,
+    'infoLink': "https://oldnavy.gap.com/",
 });
+console.log(finalSustainabilityIndex);

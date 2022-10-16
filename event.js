@@ -7,4 +7,4 @@ function getPageDetails(callback) {
         // Call the callback function
         callback(message); 
     }); 
-}; 
+};

@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind');
+body { 
+    background-color: white;
+    min-width: 320px; 
+    overflow-x: hidden; 
+    font-family: "Hind"; 
+    color: #A9C37E;
+    text-align: center;
+}
