@@ -5,7 +5,6 @@ function onPageDetailsReceived(pageDetails)  {
     document.getElementById('susIndex').innerText = pageDetails.susIndex; 
     document.getElementById('infoLink').innerHTML = '<a href = ' + pageDetails.infoLink + '>More information</a>'; 
 } 
-
 // Global reference to the status display SPAN
 //var statusDisplay = null;
 
